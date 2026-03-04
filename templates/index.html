@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iris Naive Bayes Classifier</title>
+</head>
+<body>
+
+    <h1>Iris Naive Bayes Model</h1>
+
+    <h2>Dataset Information</h2>
+    <p>Total Samples: {{ dataset_size }}</p>
+
+    <h2>Model Performance</h2>
+    <p>Training Accuracy: {{ train_accuracy }}</p>
+    <p>Testing Accuracy: {{ test_accuracy }}</p>
+
+    <h3>Confusion Matrix (Test Data)</h3>
+    <pre>{{ confusion_matrix }}</pre>
+
+    <hr>
+
+    <h2>Make Prediction</h2>
+
+    <form action="/predict" method="post">
+        <input type="text" name="sepal_length" placeholder="Sepal Length" required><br><br>
+        <input type="text" name="sepal_width" placeholder="Sepal Width" required><br><br>
+        <input type="text" name="petal_length" placeholder="Petal Length" required><br><br>
+        <input type="text" name="petal_width" placeholder="Petal Width" required><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <h3>{{ prediction_text }}</h3>
+
+</body>
+</html>
